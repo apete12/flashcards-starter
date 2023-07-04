@@ -17,4 +17,4 @@ describe('deck', function() {
     expect(countCards(deck)).to.equal(cardDeck.prototypeData.length)
   }); 
 
-});
+}); 
