@@ -6,7 +6,7 @@ const { createCard } = require('../src/card')
 const { createDeck } = require('../src/deck')
 
 
-describe('deck', function() {
+describe('round', function() {
     const card1 = createCard(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = createCard(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = createCard(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
@@ -15,7 +15,6 @@ describe('deck', function() {
     const round = createRound(deck);
 
     it('should be a function', function() {
-    
     }); 
 
     it('should hold deck of cards', function() {
@@ -33,4 +32,6 @@ describe('deck', function() {
     it('should start with first card in the deck', function(){
         assert.deepEqual(round.currentCard, card1)
     })
+
+    
 }); 
