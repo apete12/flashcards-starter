@@ -1,7 +1,7 @@
 const chai = require('chai');
-const expect = chai.expect;
+// const expect = chai.expect;
 const assert = chai.assert;
-const cardDeck = require('../src/data')
+// const cardDeck = require('../src/data')
 
 const { createRound } = require('../src/round')
 const { createCard } = require('../src/card')
