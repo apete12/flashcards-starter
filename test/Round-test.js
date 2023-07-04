@@ -1,7 +1,5 @@
 const chai = require('chai');
-// const expect = chai.expect;
 const assert = chai.assert;
-// const cardDeck = require('../src/data')
 
 const { createRound } = require('../src/round')
 const { createCard } = require('../src/card')
@@ -15,6 +13,7 @@ describe('deck', function() {
     
     const deck = createDeck([card1, card2, card3]);
     const round = createRound(deck);
+
     it('should be a function', function() {
     
     }); 
@@ -33,6 +32,5 @@ describe('deck', function() {
 
     it('should start with first card in the deck', function(){
         assert.deepEqual(round.currentCard, card1)
-
     })
 }); 
