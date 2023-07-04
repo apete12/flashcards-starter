@@ -29,6 +29,7 @@ describe('card', function() {
   it('should state if answer is incorrect', function() {
     let incorrectGuess = evaluateGuess('not object', card.correctAnswer);
     let expectedResponse = 'Incorrect!'
+
     expect(incorrectGuess).to.equal(expectedResponse)
   });
 });
