@@ -18,7 +18,15 @@ function takeTurn(guess, round) {
     return feedback
 }
 
+function calculatePercentCorrect(round) {
+    const percentCorrect = ((round.turn - round.incorrectGuesses.length)/round.turn) * 100
+    console.log(percentCorrect)
+    return parseInt(percentCorrect)
+}
+
+
 module.exports = {
     evaluateGuess,
-    takeTurn
+    takeTurn,
+    calculatePercentCorrect
 }
