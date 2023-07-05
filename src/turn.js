@@ -15,12 +15,14 @@ function takeTurn(guess, round) {
         round.incorrectGuesses.push(round.currentCard.id)
         round.turn += 1
     }
+    // console.log('round.currentCard', round.currentCard)
+    
     return feedback
 }
 
 function calculatePercentCorrect(round) {
     const percentCorrect = ((round.turn - round.incorrectGuesses.length)/round.turn) * 100
-    console.log(percentCorrect)
+    // console.log(percentCorrect)
     return parseInt(percentCorrect)
 }
 
