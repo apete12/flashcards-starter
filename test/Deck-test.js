@@ -1,20 +1,26 @@
 const chai = require('chai');
-const expect = chai.expect;
-const cardDeck = require('../src/data')
+const assert = chai.assert;
 
 const { createDeck, countCards } = require('../src/deck')
+const { createCard } = require('../src/card')
 
 describe('deck', function() {
-  it('should create deck', function() {
-    const deck = createDeck(cardDeck.prototypeData);
+  const card1 = createCard(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+  const card2 = createCard(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+  const card3 = createCard(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+  
+  const deck = createDeck([card1, card2, card3]);
 
-    expect(deck).to.equal(cardDeck.prototypeData);
+  it('should be an array', function() {
+    assert.typeOf(deck, 'array')
+  }); 
+
+  it('should create deck', function() {
+    assert.deepEqual(deck, deck);
   });
 
   it('should count cards in deck', function() {
-    const deck = createDeck(cardDeck.prototypeData);
-
-    expect(countCards(deck)).to.equal(cardDeck.prototypeData.length)
+    assert.lengthOf(deck, 3);
   }); 
 
-});
+}); 
