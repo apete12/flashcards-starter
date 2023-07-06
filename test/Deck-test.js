@@ -9,14 +9,18 @@ describe('deck', function() {
   const card2 = createCard(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
   const card3 = createCard(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
   
+  const deck = createDeck([card1, card2, card3]);
+
+  it('should be an array', function() {
+    assert.typeOf(deck, 'array')
+  }); 
+
   it('should create deck', function() {
-    const deck = createDeck([card1, card2, card3]);
     assert.deepEqual(deck, deck);
   });
 
   it('should count cards in deck', function() {
-    const deck = createDeck([card1, card2, card3]);
-    assert.deepEqual(deck.length, 3);
+    assert.lengthOf(deck, 3);
   }); 
 
 }); 

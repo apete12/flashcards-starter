@@ -1,5 +1,5 @@
-function createDeck(cardDeck){
-    return cardDeck
+function createDeck(deck){
+    return deck
 }
 
 function countCards(deck){

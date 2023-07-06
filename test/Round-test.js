@@ -14,7 +14,8 @@ describe('round', function() {
     const deck = createDeck([card1, card2, card3]);
     const round = createRound(deck);
 
-    it('should be a function', function() {
+    it('should create an object', function() {
+        assert.typeOf(round, 'object')
     }); 
 
     it('should hold deck of cards', function() {
@@ -30,7 +31,7 @@ describe('round', function() {
     })
 
     it('should start with first card in the deck', function(){
-        assert.deepEqual(round.currentCard, card1)
+        assert.deepEqual(round.currentCardIndex, 0)
     })
 
     
