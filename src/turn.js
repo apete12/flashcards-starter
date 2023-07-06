@@ -24,13 +24,17 @@ function calculatePercentCorrect(round) {
     return parseInt(percentCorrect)
 }
 
-function endRound(round){
-
-}
+// function endRound(round){
+    // const percentCorrect = calculatePercentCorrect(round);
+    // 
+    // if(round.turn === 30){
+        // return `** Round over! ** You answered ${percentCorrect}% of the questions correctly!`
+    // }
+// }
 
 module.exports = {
     evaluateGuess,
     takeTurn,
     calculatePercentCorrect,
-    endRound
+    // endRound
 }

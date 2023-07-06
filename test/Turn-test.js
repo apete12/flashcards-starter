@@ -12,7 +12,6 @@ describe('turn', function() {
   const card2 = createCard(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
   const card3 = createCard(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
 
-
   it('should state if answer is correct', function() {
     let correctGuess = evaluateGuess('sea otter', card1.correctAnswer);
     let expectedResponse = 'Correct!'
@@ -25,7 +24,6 @@ describe('turn', function() {
     let expectedResponse = 'Incorrect!'
 
     assert.equal(incorrectGuess, expectedResponse)
-
   });
 
   it('should provide feedback', function() {
@@ -55,10 +53,16 @@ describe('turn', function() {
     const round = createRound(deck);
 
     const turn1 = takeTurn('sea otter', round);
-    const turn2 = takeTurn('gallbladder', round);
-    const turn3 = takeTurn('not playing with bubble wrap', round);
+    let percentCorrect = calculatePercentCorrect(round)
+    assert.deepEqual(percentCorrect, 100)
 
-    const percentCorrect = calculatePercentCorrect(round)
+    const turn2 = takeTurn('gallbladder', round);
+    percentCorrect = calculatePercentCorrect(round)
+    assert.deepEqual(percentCorrect, 100)
+
+    const turn3 = takeTurn('not playing with bubble wrap', round);
+    percentCorrect = calculatePercentCorrect(round)
+
     assert.deepEqual(percentCorrect, 66)
   })
 
@@ -89,20 +93,16 @@ describe('turn', function() {
 
     const turn3 = takeTurn('playing with bubble wrap', round);
     assert.deepEqual(round.currentCardIndex, 3)
+
   })
 
-  it('should advance to next card with each guess', function() {
-    const deck = createDeck([card1, card2, card3]);
-    const round = createRound(deck);
+  // it('announce end of round', function() {
+    // const deck = createDeck([card1, card2, card3]);
+    // const round = createRound(deck);
 
-    const turn1 = takeTurn('sea otter', round);
-    assert.deepEqual(round.currentCardIndex, 1)
 
-    const turn2 = takeTurn('gallbladder', round);
-    assert.deepEqual(round.currentCardIndex, 2)
 
-    const turn3 = takeTurn('playing with bubble wrap', round);
-    assert.deepEqual(round.currentCardIndex, 3)
-  })
+    // assert.deepEqual(round.turn, 30)
+  // })
 
 });
