@@ -6,7 +6,7 @@ This application is a playable game in the terminal console. It provides a set o
 
 ## Preview of the Application: 
 
-https://user-images.githubusercontent.com/104571445/251634415-88361149-ac11-4021-b2d8-da1999cf5673.mov
+https://media.giphy.com/media/mM2SSl7P0ksxxRbgSi/giphy.gif
 
 ## Technologies Used:
 - JavaScript
