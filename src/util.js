@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-// const { endRound } = require('./round');
 const { takeTurn, endRound } = require('../src/turn')
 
 const genList = (round) => {

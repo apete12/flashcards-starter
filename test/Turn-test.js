@@ -1,5 +1,4 @@
 const chai = require('chai');
-const expect = chai.expect;
 const assert = chai.assert;
 
 const { evaluateGuess, takeTurn, calculatePercentCorrect, endRound } = require('../src/turn');
@@ -92,7 +91,6 @@ describe('turn', function() {
       turn: 4, 
       incorrectGuesses: [1, 14], 
     }
-
     const announceEnd = endRound(round2);
     assert.equal(announceEnd, '** Round over! ** You answered 50% of the questions correctly!')
   })

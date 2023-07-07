@@ -8,7 +8,6 @@ function createRound(deck) {
     return round
 }
 
-
 module.exports = {
     createRound
 }
